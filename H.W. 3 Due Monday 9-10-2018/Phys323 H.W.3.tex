@@ -1,0 +1,174 @@
+
+\documentclass[paper=a4, fontsize=11pt]{scrartcl} % A4 paper and 11pt font size
+\usepackage{physics}
+\usepackage[T1]{fontenc} % Use 8-bit encoding that has 256 glyphs
+\usepackage{fourier} % Use the Adobe Utopia font for the document - comment this line to return to the LaTeX default
+\usepackage[english]{babel} % English language/hyphenation
+\usepackage{amsmath,amsfonts,amsthm} % Math packages
+\usepackage{braket}
+\usepackage{lipsum} % Used for inserting dummy 'Lorem ipsum' text into the template
+\usepackage{tikz}
+\usepackage{amsmath}
+\usepackage{sectsty} % Allows customizing section commands
+\allsectionsfont{\centering \normalfont\scshape} % Make all sections centered, the default font and small caps
+\usepackage[mathscr]{euscript}
+\usepackage{bm}
+\newcommand{\uvec}[1]{\boldsymbol{\hat{\textbf{#1}}}}
+\usepackage[thinlines]{easytable}
+\usepackage{fancyhdr} % Custom headers and footers
+\pagestyle{fancyplain} % Makes all pages in the document conform to the custom headers and footers
+\fancyhead{} % No page header - if you want one, create it in the same way as the footers below
+
+\usepackage{multicol}
+\fancyfoot[L]{} % Empty left footer
+\fancyfoot[C]{} % Empty center footer
+\fancyfoot[R]{\thepage} % Page numbering for right footer
+\renewcommand{\headrulewidth}{0pt} % Remove header underlines
+\renewcommand{\footrulewidth}{0pt} % Remove footer underlines
+\setlength{\headheight}{13.6pt} % Customize the height of the header
+\usepackage{float}
+\numberwithin{equation}{section} % Number equations within sections (i.e. 1.1, 1.2, 2.1, 2.2 instead of 1, 2, 3, 4)
+\numberwithin{figure}{section} % Number figures within sections (i.e. 1.1, 1.2, 2.1, 2.2 instead of 1, 2, 3, 4)
+\numberwithin{table}{section} % Number tables within sections (i.e. 1.1, 1.2, 2.1, 2.2 instead of 1, 2, 3, 4)
+
+\setlength\parindent{0pt} % Removes all indentation from paragraphs - comment this line for an assignment with lots of text
+
+%----------------------------------------------------------------------------------------
+%	TITLE SECTION
+%----------------------------------------------------------------------------------------
+
+\newcommand{\horrule}[1]{\rule{\linewidth}{#1}} % Create horizontal rule command with 1 argument of height
+
+\title{	
+\normalfont \normalsize 
+\textsc{California State University San Marcos \\ Dr. De Leone, Physics 323} \\ [25pt] % Your university, school and/or department name(s)
+\horrule{0.5pt} \\[0.4cm] % Thin top horizontal rule
+\huge H.W. 3 \\ % The assignment title
+\horrule{2pt} \\[0.5cm] % Thick bottom horizontal rule
+}
+
+\author{Josh Lucas} % Your name
+
+\date{\normalsize\today} % Today's date or a custom date
+
+\begin{document}
+
+\maketitle % Print the title
+
+%----------------------------------------------------------------------------------------
+%	PROBLEM 1
+%----------------------------------------------------------------------------------------
+
+\section{State Vectors}
+Consider the following state vectors:
+\begin{equation*}
+\ket{\psi_1} = 2\ket{+} + 3\ket{-};\quad \ket{\psi_2} = -3i\ket{+} + 2\ket{-};\quad \ket{\psi_3} = \ket{+} + e^{i\frac{ \pi}{4}}\ket{-};  
+\end{equation*}
+\textbf{a) Calculate the inner product of $\bra{\psi_2}\ with\ \ket{\psi_1}$}\\
+\begin{align*}
+\braket{\psi_2 |\psi_1} & = -3i(2) \braket{+|+} +2(3)\braket{-|-}\\
+   & =  -6i + 6\\
+   \braket{\psi_2 | \psi_2} &= 6-6i
+\end{align*}
+\textbf{b) Normalize each state vector}\\
+ \begin{align*}
+1 & = \braket{\psi_1 | \psi_1} \\
+ & = C^* \big \{\ 2\bra{+} +3\bra{-}\ \big\}\ C\big \{\ 2\ket{+}+3\ket{-} \big \} \\
+& = C^*C \big \{ 2^2 \braket{+|+} + 2(3)\braket{+|-} + 3(2)\braket{-|+} + 3^2 \braket{-|-} \big \}  \\
+ 1 & = 13|C|^2 \\
+ |C_{\psi_1}| & = \frac{1}{\sqrt{13}} \\
+ \ket{\psi_1} & = \frac{1}{\sqrt{13}} \big ( 2\ket{+} + 3\ket{-} \big )
+\end{align*}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+ \begin{align*}
+1 & = \braket{\psi_2 | \psi_2} \\
+ & = C^* \big \{\ 3i\bra{+} +2\bra{-}\ \big\}\ C\big \{\ -3i\ket{+}+2\ket{-} \big \} \\
+& = C^*C \big \{ -9(i)^2 \braket{+|+} +3i(2)\braket{+|-} + 2(-3i)\braket{-|+} + 2^2 \braket{-|-} \big \}  \\
+& = C^*C \big \{ 9 + 4 \big \} \\  
+ 1 & = 13|C|^2 \\
+ |C_{\psi_2}| & = \frac{1}{\sqrt{13}} \\
+ \ket{\psi_2} & = \frac{1}{\sqrt{13}} \big ( -3i\ket{+} + 2\ket{-} \big )
+\end{align*}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{align*}
+1 & = \braket{\psi_3 | \psi_3} \\
+  & = C^* \big \{  \bra{+} + e^{-i\tfrac{\pi}{4}} \bra{-} \big \} C \big \{ \ket{+} + e^{i\tfrac{\pi}{4}} \ket{-} \big \} \\
+  & = C^*C \big \{ \braket{+|+} + e^{i\tfrac{\pi}{4} - i\tfrac{\pi}{4}} \braket{-|-} \big \} \\
+  & = C^* C \big \{ 1+ 1 \big \} \\
+  1 & = 2|C|^2 \\
+  |C_{\psi_3}| & = \frac{1}{\sqrt{2}} \\
+  \ket{\psi_3} & = \frac{1}{\sqrt{2}} \big ( \ket{+} +   e^{i\tfrac{\pi}{4}} \ket{- }\big )
+\end{align*}
+ \textbf{c) For each normalized state vector, use Postulate 4 to calculate the probability that the spin-component is up or down along the z-axis. }
+ \begin{multicols}{2}
+ \noindent
+\begin{align*}
+ \mathscr{P_+} & = |\braket{+|\psi_1 }|^2 \\
+ & = |\bra{+} \big[ \tfrac{2}{\sqrt{13}}\ket{+} + \tfrac{3}{\sqrt{13}} \ket{-} \big] |^2 \\
+ & = |\tfrac{2}{\sqrt{13}} \braket{+|+} + \tfrac{3}{\sqrt{13}} \braket{+|-}|^2 \\
+ & = \bigg | \tfrac{2}{\sqrt{13}} \bigg |^2 \\
+\mathscr{P_+} & = \frac{4}{13}
+  \end{align*}
+   \begin{align*}
+ \mathscr{P_-} & = |\braket{-|\psi_1 }|^2 \\
+ & = |\bra{-} \big[ \tfrac{2}{\sqrt{13}}\ket{+} + \tfrac{3}{\sqrt{13}} \ket{-} \big] |^2 \\
+ & = |\tfrac{2}{\sqrt{13}} \braket{-|+} + \tfrac{3}{\sqrt{13}} \braket{-|-}|^2 \\
+ & = \bigg | \tfrac{3}{\sqrt{13}} \bigg |^2 \\
+\mathscr{P_-} & = \frac{9}{13}
+  \end{align*}
+  \end{multicols}
+  %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+  \begin{multicols}{2}
+  \noindent
+  \begin{align*}
+ \mathscr{P_+} & = |\braket{+|\psi_2 }|^2 \\
+ & = |\bra{+} \big[ \tfrac{-3i}{\sqrt{13}}\ket{+} + \tfrac{2}{\sqrt{13}} \ket{-} \big] |^2 \\
+ & = |\tfrac{-3i}{\sqrt{13}} \braket{+|+} + \tfrac{2}{\sqrt{13}} \braket{+|-}|^2 \\
+ & = \bigg | \tfrac{-3i}{\sqrt{13}} \bigg |^2 \\
+\mathscr{P_+} & = \frac{9}{13}
+  \end{align*}
+   \begin{align*}
+ \mathscr{P_-} & = |\braket{-|\psi_2 }|^2 \\
+ & = |\bra{-} \big[ \tfrac{-3i}{\sqrt{13}}\ket{+} + \tfrac{2}{\sqrt{13}} \ket{-} \big] |^2 \\
+ & = |\tfrac{-3i}{\sqrt{13}} \braket{-|+} + \tfrac{2}{\sqrt{13}} \braket{-|-}|^2 \\
+ & = \bigg | \tfrac{2}{\sqrt{13}} \bigg |^2 \\
+\mathscr{P_-} & = \frac{4}{13}
+  \end{align*}
+  \end{multicols}
+  %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+  \begin{multicols}{2}
+  \noindent
+  \begin{align*}
+  \mathscr{P_+} & = |\braket{+ | \psi_3}|^2 \\
+  & = |\bra{+} \big [ \tfrac{1}{\sqrt{2}} \ket{+} + \tfrac{ e^{i\tfrac{\pi}{4}}}{\sqrt{2}} \ket{-} \big ]|^2 \\
+  & = |\tfrac{1}{\sqrt{2}} \braket{+|+} + \tfrac{ e^{i\tfrac{\pi}{4}}}{\sqrt{2}} \braket{+|-}  |^2 \\
+  & = \bigg | \frac{1}{\sqrt{2}} \bigg |^2 \\
+  \mathscr{P_+} & = \frac{1}{2}
+\end{align*}
+\begin{align*}
+  \mathscr{P_-} & = |\braket{- | \psi_3}|^2 \\
+  & = |\bra{-} \big [ \tfrac{1}{\sqrt{2}} \ket{+} + \tfrac{ e^{i\tfrac{\pi}{4}}}{\sqrt{2}} \ket{-} \big ]|^2 \\
+  & = |\tfrac{1}{\sqrt{2}} \braket{-|+} + \tfrac{ e^{i\tfrac{\pi}{4}}}{\sqrt{2}} \braket{-|-}  |^2 \\
+  & = \bigg |  \tfrac{ e^{i\tfrac{\pi}{4}}}{\sqrt{2}} \bigg |^2 \\
+  \mathscr{P_-} & = \frac{1}{2}
+\end{align*}
+\end{multicols}
+ \textbf{d) Would you expect to find the same probabilities for the measured spin-components along the x- and y- axes?}\\
+ \\
+ We would not expect to find the same probabilities for the other axes. The probabilities in the orthogonal directions are independent of each other.  
+ \section{Phase of quantum state vector}
+\textbf{Show that a change in the overall phase of a quantum state vector does not change the probability of obtaining a particular result in a measurement. }\\
+\\
+The phase of the quantum state vector is not physically measurable only the difference in the phases. The complex conjugate will ensure the magnitude is the same.
+\begin{align*}
+\mathscr{P_\pm} & = |\braket{\pm|\psi}|^2 \\
+\mathscr{P_{\psi_\alpha}}& = |\braket{\pm | e^{i\alpha}\psi}|^2 \\
+& = |e^{i\alpha} \braket{\pm | \psi}|^2 \\
+& = (e^{i\alpha} \braket{\pm | \psi})(e^{-i\alpha} \braket{\pm | \psi}) \\
+& = |(1)\braket{\pm | \psi}|^2 \\
+\mathscr{P_\pm} & = \mathscr{\psi_\alpha} \\
+|\braket{\pm | \psi}|^2 & = |\braket{\pm | \psi}|^2
+\end{align*}
+%----------------------------------------------------------------------------------------
+
+\end{document}

@@ -1,0 +1,376 @@
+
+\documentclass[paper=a4, fontsize=11pt]{scrartcl} % A4 paper and 11pt font size
+\usepackage{physics}
+\usepackage[T1]{fontenc} % Use 8-bit encoding that has 256 glyphs
+\usepackage{fourier} % Use the Adobe Utopia font for the document - comment this line to return to the LaTeX default
+\usepackage[english]{babel} % English language/hyphenation
+\usepackage{amsmath,amsfonts,amsthm} % Math packages
+\usepackage{braket}
+\usepackage{lipsum} % Used for inserting dummy 'Lorem ipsum' text into the template
+\usepackage{tikz}
+\usepackage{amsmath}
+\usepackage{sectsty} % Allows customizing section commands
+\allsectionsfont{\centering \normalfont\scshape} % Make all sections centered, the default font and small caps
+\usepackage[mathscr]{euscript}
+\usepackage{bm}
+\newcommand{\uvec}[1]{\boldsymbol{\hat{\textbf{#1}}}}
+\usepackage[thinlines]{easytable}
+\usepackage{fancyhdr} % Custom headers and footers
+\pagestyle{fancyplain} % Makes all pages in the document conform to the custom headers and footers
+\fancyhead{} % No page header - if you want one, create it in the same way as the footers below
+
+\usepackage{multicol}
+\fancyfoot[L]{} % Empty left footer
+\fancyfoot[C]{} % Empty center footer
+\fancyfoot[R]{\thepage} % Page numbering for right footer
+\renewcommand{\headrulewidth}{0pt} % Remove header underlines
+\renewcommand{\footrulewidth}{0pt} % Remove footer underlines
+\setlength{\headheight}{13.6pt} % Customize the height of the header
+\usepackage{float}
+\numberwithin{equation}{section} % Number equations within sections (i.e. 1.1, 1.2, 2.1, 2.2 instead of 1, 2, 3, 4)
+\numberwithin{figure}{section} % Number figures within sections (i.e. 1.1, 1.2, 2.1, 2.2 instead of 1, 2, 3, 4)
+\numberwithin{table}{section} % Number tables within sections (i.e. 1.1, 1.2, 2.1, 2.2 instead of 1, 2, 3, 4)
+
+\setlength\parindent{0pt} % Removes all indentation from paragraphs - comment this line for an assignment with lots of text
+\usepackage{pgfplots}
+
+\pgfplotsset{
+  compat=newest,
+  xlabel near ticks,
+  ylabel near ticks
+}
+%----------------------------------------------------------------------------------------
+%	TITLE SECTION
+%----------------------------------------------------------------------------------------
+
+\newcommand{\horrule}[1]{\rule{\linewidth}{#1}} % Create horizontal rule command with 1 argument of height
+
+\title{	
+\normalfont \normalsize 
+\textsc{California State University San Marcos \\ Dr. De Leone, Physics 323} \\ [25pt] % Your university, school and/or department name(s)
+\horrule{0.5pt} \\[0.4cm] % Thin top horizontal rule
+\huge H.W. 4 \\ % The assignment title
+\horrule{2pt} \\[0.5cm] % Thick bottom horizontal rule
+}
+
+\author{Josh Lucas} % Your name
+
+\date{\normalsize\today} % Today's date or a custom date
+
+\begin{document}
+
+\maketitle % Print the title
+
+%----------------------------------------------------------------------------------------
+%	PROBLEM 1
+%----------------------------------------------------------------------------------------
+
+\section*{Problem 1.6}
+\textbf{A beam of spin-1/2 particles is prepared in the state}
+$$ \ket{\psi} = \frac{2}{\sqrt{13}} \ket{+}_x + i \frac{3}{\sqrt{13}} \ket{-}_x$$
+\textbf{a) What are the possible results of a measurement of the spin component $S_z$, and with what probabilities would they occur?}\\
+We know that the relation for state vectors in the x direction is  $\ket{\pm}_x = \frac{1}{\sqrt{2}} \big [ \ket{+} \pm \ket{-} \big ]$ which we can substitute in our probability equation,
+\begin{align*}
+\mathscr{P_+} & = \bigg | \bra{+} \big \{ \tfrac{2}{\sqrt{13}} \big ( \tfrac{1}{\sqrt{2}} \big [ \ket{+} + \ket{-} \big ] \big ) +  \tfrac{3}{\sqrt{13}} \big ( \tfrac{1}{\sqrt{2}}   \big [ \ket{+} + \ket{-}  \big ]\big ) \big \} \bigg |^2 \\
+& = \bigg |  \tfrac{2}{\sqrt{26}} \braket{+|+} + i\tfrac{3}{\sqrt{26}} \braket{+|+} \bigg |^2 \\
+& = \bigg | \tfrac{2}{\sqrt{26}} + i\tfrac{3}{\sqrt{26}} \bigg |^2 \\
+\mathscr{P_+} & = \tfrac{13}{26} = \tfrac{1}{2}
+\end{align*}
+\begin{align*}
+\mathscr{P_-} & = \bigg | \bra{-} \big \{ \tfrac{2}{\sqrt{13}} \big ( \tfrac{1}{\sqrt{2}} \big [ \ket{+} - \ket{-} \big ] \big ) +  \tfrac{3}{\sqrt{13}} \big ( \tfrac{1}{\sqrt{2}}   \big [ \ket{+} - \ket{-}  \big ]\big ) \big \} \bigg |^2 \\
+& = \bigg |  \tfrac{2}{\sqrt{26}} \braket{-|-} - i\tfrac{3}{\sqrt{26}} \braket{-|-} \bigg |^2 \\
+& = \bigg | \tfrac{2}{\sqrt{26}} - i\tfrac{3}{\sqrt{26}} \bigg |^2 \\
+\mathscr{P_-} & = \tfrac{13}{26} = \tfrac{1}{2}
+\end{align*}
+\textbf{b) What are the possible results of a measurement of the spin component $S_x$, and with what probabilities would they occur?}
+ \begin{multicols}{2}
+ \noindent
+\begin{align*}
+\mathscr{P_+} & = \bigg |  \braket{+_x|\psi} \bigg|^2 \\
+& = \bigg | \bra{+} \bigg \{ \tfrac{2}{\sqrt{13}}\ket{+} + i\tfrac{3}{\sqrt{13}}\ket{-} \bigg \} \bigg |^2 \\
+& = \bigg |  \tfrac{2}{\sqrt{13}}\braket{+|+}  \bigg |^2 \\
+  & = \bigg |  \tfrac{2}{\sqrt{13}} \bigg |^2 \\
+  \mathscr{P_+} & = \frac{4}{13}
+  \end{align*}
+   \begin{align*}
+\mathscr{P_-} & = \bigg |  \braket{+_x|\psi} \bigg|^2 \\
+& = \bigg | \bra{-} \bigg \{ \tfrac{2}{\sqrt{13}}\ket{+} - i\tfrac{3}{\sqrt{13}}\ket{-} \bigg \} \bigg |^2 \\
+& = \bigg |  \tfrac{3i}{\sqrt{13}}\braket{-|-}  \bigg |^2 \\
+  & = \bigg |  \tfrac{3i}{\sqrt{13}} \bigg |^2 \\
+  \mathscr{P_-} & = \frac{9}{13}
+  \end{align*}
+  \end{multicols}
+  
+  \textbf{c) Plot histograms of the predicted measurement results from parts (a) and (b).} \\
+  \\
+   \begin{tikzpicture}
+    \begin{axis}[
+      ybar,
+      bar width=15pt,
+      xlabel={$S_z$},
+      ylabel={Probability},
+      ymin=0,
+      ymax =100,
+      ytick=\empty,
+      xtick=data,
+      axis x line=bottom,
+      axis y line=left,
+      enlarge x limits=0.2,
+      symbolic x coords={ $ + \frac{\hbar}{2}$, $ - \frac{\hbar}{2}$ },
+      xticklabel style={anchor=base,yshift=-\baselineskip},
+      nodes near coords={\pgfmathprintnumber\pgfplotspointmeta\%}
+    ]
+      \addplot[fill=white] coordinates {
+        ($ + \frac{\hbar}{2}$,50)
+        ($ - \frac{\hbar}{2}$,50)
+      };
+    \end{axis}
+  \end{tikzpicture}
+     \begin{tikzpicture}
+    \begin{axis}[
+      ybar,
+      bar width=15pt,
+      xlabel={$S_x$},
+      ylabel={Probability},
+      ymin=0,
+      ymax =100,
+      ytick=\empty,
+      xtick=data,
+      axis x line=bottom,
+      axis y line=left,
+      enlarge x limits=0.2,
+      symbolic x coords={ $ + \frac{\hbar}{2}$, $ - \frac{\hbar}{2}$ },
+      xticklabel style={anchor=base,yshift=-\baselineskip},
+      nodes near coords={\pgfmathprintnumber\pgfplotspointmeta\%}
+    ]
+      \addplot[fill=white] coordinates {
+        ($ + \frac{\hbar}{2}$,30.77)
+        ($ - \frac{\hbar}{2}$,69.23)
+      };
+    \end{axis}
+  \end{tikzpicture}
+
+
+\section*{Problem 1.10}
+\textbf{Consider the three quantum states:}
+\begin{align*}
+\ket{\psi_1} & = \tfrac{4}{5} \ket{+} + i\tfrac{3}{5} \ket{-} \\
+\ket{\psi_2} & = \tfrac{4}{5} \ket{+} - i\tfrac{3}{5} \ket{-} \\
+\ket{\psi_1} & = - \tfrac{4}{5} \ket{+} + i\tfrac{3}{5} \ket{-} 
+\end{align*}
+\textbf{a) For each of the $\ket{\psi}$ above, calculate the probabilities of spin component measurements
+along the x-, y-, and z-axes.}\\
+\\
+%%%%%xxxxxxxxxxxx%%%%%%%%%%%%%%%%%%%%%%%
+ \begin{multicols}{2}
+ \noindent
+\begin{align*}
+\mathscr{P_+}_x & = \bigg | \braket{+_x|\psi_1} \bigg|^2 \\
+& = \bigg | \tfrac{1}{\sqrt{2}}\bra{+} + \bra{-} \bigg \{ \tfrac{4}{5}\ket{+} + i\tfrac{3}{5}\ket{-} \bigg \} \bigg |^2 \\
+& = \bigg |  \tfrac{4}{5\sqrt{2}}\braket{+|+} + i\tfrac{3}{5\sqrt{2}} \braket{-|-}  \bigg |^2 \\
+  & = \bigg |  \tfrac{4}{5\sqrt{2}} + i\tfrac{3}{5\sqrt{2}} \bigg |^2 \\
+  \mathscr{P_+}_x & = \tfrac{25}{50} = \tfrac{1}{2}
+  \end{align*}
+   \begin{align*}
+\mathscr{P_-} & = \bigg |  \braket{-_x|\psi_1} \bigg|^2 \\
+& = \bigg | \tfrac{1}{\sqrt{2}} \bra{+} -\bra{-} \bigg \{ \tfrac{4}{5}\ket{+} + i\tfrac{3}{5}\ket{-} \bigg \} \bigg |^2 \\
+& = \bigg |  \tfrac{4}{5\sqrt{2}}\braket{+|+} - i\tfrac{3}{5\sqrt{2}} \braket{-|-}  \bigg |^2 \\
+ & = \bigg |  \tfrac{4}{5\sqrt{2}} - i\tfrac{3}{5\sqrt{2}} \bigg |^2 \\
+  \mathscr{P_-}_x & = \tfrac{25}{50} = \tfrac{1}{2}
+  \end{align*}
+  \end{multicols}
+  %%%%%%%%%YYYYYYYYYYYYYYYYY%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+   \begin{multicols}{2}
+ \noindent
+\begin{align*}
+\mathscr{P_+}_y & = \bigg | \braket{+_y|\psi_1} \bigg|^2 \\
+& = \bigg | \tfrac{1}{\sqrt{2}}\bra{+} - i\bra{-} \bigg \{ \tfrac{4}{5}\ket{+} + i\tfrac{3}{5}\ket{-} \bigg \} \bigg |^2 \\
+& = \bigg |  \tfrac{4}{5\sqrt{2}}\braket{+|+} - i^2\tfrac{3}{5\sqrt{2}} \braket{-|-}  \bigg |^2 \\
+  & = \bigg |  \tfrac{4}{5\sqrt{2}} + \tfrac{3}{5\sqrt{2}} \bigg |^2 \\
+  \mathscr{P_+}_y & = \tfrac{49}{50}
+  \end{align*}
+   \begin{align*}
+\mathscr{P_-}_Y & = \bigg |  \braket{-_y|\psi_1} \bigg|^2 \\
+& = \bigg | \tfrac{1}{\sqrt{2}} \bra{+} + i \bra{-} \bigg \{ \tfrac{4}{5}\ket{+} + i\tfrac{3}{5}\ket{-} \bigg \} \bigg |^2 \\
+& = \bigg |  \tfrac{4}{5\sqrt{2}}\braket{+|+} + i^2\tfrac{3}{5\sqrt{2}} \braket{-|-}  \bigg |^2 \\
+ & = \bigg |  \tfrac{4}{5\sqrt{2}} - \tfrac{3}{5\sqrt{2}} \bigg |^2 \\
+  \mathscr{P_-}_y & = \tfrac{1}{50}
+  \end{align*}
+  \end{multicols}
+  %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%Zzzzzzz%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+   \begin{multicols}{2}
+ \noindent
+\begin{align*}
+\mathscr{P_+}_z & = \bigg | \braket{+_z|\psi_1} \bigg|^2 \\
+& = \bigg | \bra{+}  \bigg \{ \tfrac{4}{5}\ket{+} + i\tfrac{3}{5}\ket{-} \bigg \} \bigg |^2 \\
+& = \bigg |  \tfrac{4}{5}\braket{+|+}  \bigg |^2 \\
+  & = \bigg |  \tfrac{4}{5} \bigg |^2 \\
+  \mathscr{P_+}_z & = \tfrac{16}{25}
+  \end{align*}
+   \begin{align*}
+\mathscr{P_-}_z & = \bigg |  \braket{-_z|\psi_1} \bigg|^2 \\
+& = \bigg |  \bra{-} \bigg \{ \tfrac{4}{5}\ket{+} + i\tfrac{3}{5}\ket{-} \bigg \} \bigg |^2 \\
+& = \bigg |    i\tfrac{3}{5} \braket{-|-}  \bigg |^2 \\
+ & = \bigg |  i \tfrac{3}{5} \bigg |^2 \\
+  \mathscr{P_-}_z & = \tfrac{9}{25}
+  \end{align*}
+  \end{multicols}\horrule{2pt} 
+  %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+  %%%%%%%%%%%%%%%%%%BBBB%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+   \begin{multicols}{2}
+ \noindent
+\begin{align*}
+\mathscr{P_+}_x & = \bigg | \braket{+_x|\psi_2} \bigg|^2 \\
+& = \bigg | \tfrac{1}{\sqrt{2}}\bra{+} + \bra{-} \bigg \{ \tfrac{4}{5}\ket{+} - i\tfrac{3}{5}\ket{-} \bigg \} \bigg |^2 \\
+& = \bigg |  \tfrac{4}{5\sqrt{2}}\braket{+|+} - i\tfrac{3}{5\sqrt{2}} \braket{-|-}  \bigg |^2 \\
+  & = \bigg |  \tfrac{4}{5\sqrt{2}} - i\tfrac{3}{5\sqrt{2}} \bigg |^2 \\
+  \mathscr{P_+}_x & = \tfrac{25}{50} = \tfrac{1}{2}
+  \end{align*}
+   \begin{align*}
+\mathscr{P_-} & = \bigg |  \braket{-_x|\psi_2} \bigg|^2 \\
+& = \bigg | \tfrac{1}{\sqrt{2}} \bra{+} -\bra{-} \bigg \{ \tfrac{4}{5}\ket{+} - i\tfrac{3}{5}\ket{-} \bigg \} \bigg |^2 \\
+& = \bigg |  \tfrac{4}{5\sqrt{2}}\braket{+|+} + i\tfrac{3}{5\sqrt{2}} \braket{-|-}  \bigg |^2 \\
+ & = \bigg |  \tfrac{4}{5\sqrt{2}} + i\tfrac{3}{5\sqrt{2}} \bigg |^2 \\
+  \mathscr{P_-}_x & = \tfrac{25}{50} = \tfrac{1}{2}
+  \end{align*}
+  \end{multicols}
+  %%%%%%%%%YYYYYYYYYYYYYYYYY%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{multicols}{2}
+\noindent
+	\begin{align*}
+\mathscr{P_+}_y & = \bigg | \braket{+_y|\psi_2} \bigg|^2 \\
+& = \bigg | \tfrac{1}{\sqrt{2}}\bra{+} - i\bra{-} \bigg \{ \tfrac{4}{5}\ket{+} - i\tfrac{3}{5}\ket{-} \bigg \} \bigg |^2 \\
+& = \bigg |  \tfrac{4}{5\sqrt{2}}\braket{+|+} + \tfrac{3i^2}{5\sqrt{2}} \braket{-|-}  \bigg |^2 \\
+  & = \bigg |  \tfrac{4}{5\sqrt{2}} - \tfrac{3}{5\sqrt{2}} \bigg |^2 \\
+  \mathscr{P_+}_y & = \tfrac{1}{50}
+  \end{align*}
+  \begin{align*}
+\mathscr{P_-}_Y & = \bigg |  \braket{-_y|\psi_2} \bigg|^2 \\
+& = \bigg | \tfrac{1}{\sqrt{2}} \bra{+} + i \bra{-} \bigg \{ \tfrac{4}{5}\ket{+} - i\tfrac{3}{5}\ket{-} \bigg \} \bigg |^2 \\
+& = \bigg |  \tfrac{4}{5\sqrt{2}}\braket{+|+} - \tfrac{3i^2}{5\sqrt{2}} \braket{-|-}  \bigg |^2 \\
+ & = \bigg |  \tfrac{4}{5\sqrt{2}} + \tfrac{3}{5\sqrt{2}} \bigg |^2 \\
+  \mathscr{P_-}_y & = \tfrac{49}{50}
+  \end{align*}
+\end{multicols}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%Zzzzzzz%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{multicols}{2}
+\noindent
+	\begin{align*}
+\mathscr{P_+}_z & = \bigg | \braket{+_z|\psi_2} \bigg|^2 \\
+& = \bigg | \bra{+}  \bigg \{ \tfrac{4}{5}\ket{+} - i\tfrac{3}{5}\ket{-} \bigg \} \bigg |^2 \\
+& = \bigg |  \tfrac{4}{5}\braket{+|+}  \bigg |^2 \\
+  & = \bigg |  \tfrac{4}{5} \bigg |^2 \\
+  \mathscr{P_+}_z & = \tfrac{16}{25}
+	\end{align*}
+	\begin{align*}
+\mathscr{P_-}_z & = \bigg |  \braket{-_z|\psi_2} \bigg|^2 \\
+& = \bigg |  \bra{-} \bigg \{ \tfrac{4}{5}\ket{+} - i\tfrac{3}{5}\ket{-} \bigg \} \bigg |^2 \\
+& = \bigg |  -  i\tfrac{3}{5} \braket{-|-}  \bigg |^2 \\
+ & = \bigg | - i \tfrac{3}{5} \bigg |^2 \\
+  \mathscr{P_-}_z & = \tfrac{9}{25}
+	\end{align*}
+\end{multicols}
+%%%%%%%%%%%%%%%%%%%%%%%33333
+\horrule{2pt} 
+ \begin{multicols}{2}
+ \noindent
+\begin{align*}
+\mathscr{P_+}_x & = \bigg | \braket{+_x|\psi_3} \bigg|^2 \\
+& = \bigg | \tfrac{1}{\sqrt{2}}\bra{+} + \bra{-} \bigg \{ -\tfrac{4}{5}\ket{+} + i\tfrac{3}{5}\ket{-} \bigg \} \bigg |^2 \\
+& = \bigg |  -\tfrac{4}{5\sqrt{2}}\braket{+|+} + i\tfrac{3}{5\sqrt{2}} \braket{-|-}  \bigg |^2 \\
+  & = \bigg | - \tfrac{4}{5\sqrt{2}} + i\tfrac{3}{5\sqrt{2}} \bigg |^2 \\
+  \mathscr{P_+}_x & = \tfrac{25}{50} = \tfrac{1}{2}
+  \end{align*}
+   \begin{align*}
+\mathscr{P_-} & = \bigg |  \braket{-_x|\psi_3} \bigg|^2 \\
+& = \bigg | \tfrac{1}{\sqrt{2}} \bra{+} -\bra{-} \bigg \{- \tfrac{4}{5}\ket{+} + i\tfrac{3}{5}\ket{-} \bigg \} \bigg |^2 \\
+& = \bigg |  -\tfrac{4}{5\sqrt{2}}\braket{+|+} - i\tfrac{3}{5\sqrt{2}} \braket{-|-}  \bigg |^2 \\
+ & = \bigg |  -\tfrac{4}{5\sqrt{2}} - i\tfrac{3}{5\sqrt{2}} \bigg |^2 \\
+  \mathscr{P_-}_x & = \tfrac{25}{50} = \tfrac{1}{2}
+  \end{align*}
+  \end{multicols}
+  %%%%%%%%%YYYYYYYYYYYYYYYYY%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+   \begin{multicols}{2}
+ \noindent
+\begin{align*}
+\mathscr{P_+}_y & = \bigg | \braket{+_y|\psi_3} \bigg|^2 \\
+& = \bigg | \tfrac{1}{\sqrt{2}}\bra{+} - i\bra{-} \bigg \{ -\tfrac{4}{5}\ket{+} + i\tfrac{3}{5}\ket{-} \bigg \} \bigg |^2 \\
+& = \bigg | - \tfrac{4}{5\sqrt{2}}\braket{+|+} - i^2\tfrac{3}{5\sqrt{2}} \braket{-|-}  \bigg |^2 \\
+  & = \bigg |  -\tfrac{4}{5\sqrt{2}} + \tfrac{3}{5\sqrt{2}} \bigg |^2 \\
+  \mathscr{P_+}_y & = \tfrac{1}{50}
+  \end{align*}
+   \begin{align*}
+\mathscr{P_-}_Y & = \bigg |  \braket{-_y|\psi_3} \bigg|^2 \\
+& = \bigg | \tfrac{1}{\sqrt{2}} \bra{+} + i \bra{-} \bigg \{ -\tfrac{4}{5}\ket{+} + i\tfrac{3}{5}\ket{-} \bigg \} \bigg |^2 \\
+& = \bigg |  -\tfrac{4}{5\sqrt{2}}\braket{+|+} + i^2\tfrac{3}{5\sqrt{2}} \braket{-|-}  \bigg |^2 \\
+ & = \bigg |  -\tfrac{4}{5\sqrt{2}} - \tfrac{3}{5\sqrt{2}} \bigg |^2 \\
+  \mathscr{P_-}_y & = \tfrac{49}{50}
+  \end{align*}
+  \end{multicols}
+  %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%Zzzzzzz%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+   \begin{multicols}{2}
+ \noindent
+\begin{align*}
+\mathscr{P_+}_z & = \bigg | \braket{+_z|\psi_3} \bigg|^2 \\
+& = \bigg | \bra{+}  \bigg \{ -\tfrac{4}{5}\ket{+} + i\tfrac{3}{5}\ket{-} \bigg \} \bigg |^2 \\
+& = \bigg |  -\tfrac{4}{5}\braket{+|+}  \bigg |^2 \\
+  & = \bigg |  -\tfrac{4}{5} \bigg |^2 \\
+  \mathscr{P_+}_z & = \tfrac{16}{25}
+  \end{align*}
+   \begin{align*}
+\mathscr{P_-}_z & = \bigg |  \braket{-_z|\psi_3} \bigg|^2 \\
+& = \bigg |  \bra{-} \bigg \{ -\tfrac{4}{5}\ket{+} + i\tfrac{3}{5}\ket{-} \bigg \} \bigg |^2 \\
+& = \bigg |    i\tfrac{3}{5} \braket{-|-}  \bigg |^2 \\
+ & = \bigg |  i \tfrac{3}{5} \bigg |^2 \\
+  \mathscr{P_-}_z & = \tfrac{9}{25}
+  \end{align*}
+  \end{multicols}
+
+
+\textbf{b) Use your results from (a) to comment on the importance of the overall phase and of the
+relative phases of the quantum state vector.} \\
+\\
+Because the same results were observed from state vectors in different phases we can say that the phases are not observable in our measurements.
+\section*{Problem 1.11}
+\textbf{A beam of spin-1/2 particles is prepared in the state}\\
+$$\ket{\psi} = \tfrac{3}{\sqrt{34}} \ket{+} + i\tfrac{5}{\sqrt{34}} \ket{-}$$ 
+\\
+\textbf{a) What are the possible results of a measurement of the spin component Sz, and with what
+probabilities would they occur?} \\
+\begin{multicols}{2}
+\noindent
+\begin{align*}
+\mathscr{P}_+ & = \bigg | \bra{+} \big \{  \tfrac{3}{\sqrt{34}} \ket{+} + i\tfrac{5}{\sqrt{34}} \ket{-} \big \} \bigg|^2 \\
+& = \bigg | \tfrac{3}{\sqrt{34}} \bigg|^2 \\
+\mathscr{P}_+ & = \tfrac{9}{34}
+\end{align*}
+\begin{align*}
+\mathscr{P}_- & = \bigg | \bra{-} \big \{  \tfrac{3}{\sqrt{34}} \ket{+} + i\tfrac{5}{\sqrt{34}} \ket{-} \big \} \bigg|^2 \\
+& = \bigg | i\tfrac{5}{\sqrt{34}} \bigg|^2 \\
+\mathscr{P}_- & = \tfrac{25}{34}
+\end{align*}
+\end{multicols}
+\textbf{b) Suppose that the $S_z$ measurement yields the result Sz = -$\frac{\hbar}{2}$. Subsequent to that result a second measurement is performed to measure the spin component $S_x$. What are the
+possible results of that measurement, and with what probabilities would they occur?}\\
+\\
+If the measurement show that the system is prepared in the z down state then we would expect an even distribution in spins for the x direction as,
+\begin{multicols}{2}
+\noindent
+\begin{align*}
+\mathscr{P}_+ & = \bigg | \tfrac{1}{\sqrt{2}}\bra{+}  \big \{  \  \ket{+} + \ket{-} \big \} \bigg|^2 \\
+& = \bigg | \tfrac{1}{\sqrt{2}} \bigg|^2 \\
+\mathscr{P}_+ & = \tfrac{1}{2}
+\end{align*}
+\begin{align*}
+\mathscr{P}_- & = \bigg | \tfrac{1}{\sqrt{2}}\bra{-} \big \{  \ket{+} + \ket{-} \big \} \bigg|^2 \\
+& = \bigg | \tfrac{1}{\sqrt{2}} \bigg|^2 \\
+\mathscr{P}_- & = \tfrac{1}{2}
+\end{align*}
+\end{multicols}
+\textbf{c) Draw a schematic diagram depicting the successive measurements in parts (a) and (b).}\\
+\\
+ %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%----------------------------------------------------------------------------------------
+
+\end{document}
